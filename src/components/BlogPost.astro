@@ -1,20 +1,23 @@
 ---
 
 const { title, description, img, alt, tag, url, datet, author } = Astro.props;
+
+
 ---
 
 <article class="flex flex-col dark:bg-teal-800 rounded-2xl p-2">
-    <a rel="noopener noreferrer" href={url} aria-label={title}>
+    <a href={url} aria-label={title}>
       <img alt={alt} class="object-cover w-full h-52 dark:bg-teal-700 p-1 rounded-2xl" src={img}>
     </a>
     <div class="flex flex-col flex-1 p-6">
-      <a rel="noopener noreferrer" href={url} aria-label={title}></a>
-      <a rel="noopener noreferrer" class="  text-xs tracki uppercase hover:no-underline dark:text-yellow-500">{tag}</a>
+      <a href={url} aria-label={title}></a>
+      <a href=`/tags/${tag}` class="text-xs hover:no-underline dark:text-yellow-500">{tag}</a>
       <h3 class="flex-1 py-2 text-lg font-semibold leadi">{title}</h3>
       <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
         <span>{datet}</span>
         <span>{author}</span>
-        <a class=" bg-teal-500 px-2 py-1 rounded-xl text-white text-sm hover:bg-yellow-600" href={url}>Learning</a>
+        <a class=" font-semibold bg-teal-600 px-2 py-1 rounded-xl text-gray-100 text-sm hover:bg-yellow-600 border border-teal-400" 
+        href={url}>Learning</a>
       </div>
     </div>
   </article>
